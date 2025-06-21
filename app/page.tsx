@@ -12,6 +12,7 @@ import { Switch } from "@/components/ui/switch"
 import { Loader2, Download, FileText } from "lucide-react"
 import { generateWorksheet } from "./actions"
 import { EnhancedTopicInput } from "@/components/enhanced-topic-input"
+import HeroSection from "@/components/hero-section"
 
 const gradeOptions = [
   "1年级",
@@ -82,12 +83,12 @@ export default function WorksheetGenerator() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
           <CardContent className="flex flex-col items-center justify-center py-12">
-            <Loader2 className="h-12 w-12 animate-spin text-blue-600 mb-4" />
+            <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" />
             <h2 className="text-xl font-semibold mb-2">正在生成工作表...</h2>
-            <p className="text-gray-600 text-center">AI正在工作中，请等待5-10秒...</p>
+            <p className="text-muted-foreground text-center">AI正在工作中，请等待5-10秒...</p>
           </CardContent>
         </Card>
       </div>
@@ -96,7 +97,7 @@ export default function WorksheetGenerator() {
 
   if (result) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-background flex items-center justify-center p-4">
         <Card className="w-full max-w-md">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl text-green-700">生成完成！</CardTitle>
@@ -143,13 +144,12 @@ export default function WorksheetGenerator() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-      <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">AI工作表生成器</h1>
-          <p className="text-lg text-gray-600">为任何年级和主题创建定制工作表</p>
-        </div>
-
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <HeroSection />
+      
+      {/* Main Content */}
+      <div className="max-w-2xl mx-auto px-4 pb-20" data-form-section>
         <Card>
           <CardHeader>
             <CardTitle>工作表配置</CardTitle>
