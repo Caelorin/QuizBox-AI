@@ -9,9 +9,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    serverComponentsExternalPackages: ['puppeteer-core']
-  }
+  serverExternalPackages: ['puppeteer-core']
 }
 
 export default nextConfig

@@ -1,4 +1,4 @@
-就降级 "use server"
+"use server"
 
 import { generateText } from "ai"
 import { openai } from "@ai-sdk/openai"
